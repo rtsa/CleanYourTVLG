@@ -1,0 +1,22 @@
+{
+  "id": "com.cleanyourtv.satellitehome",
+  "version": "0.5.0",
+  "vendor": "CleanYourTVLG contributors",
+  "type": "web",
+  "main": "index.html",
+  "title": "CleanYourTVLG",
+  "icon": "icon.png",
+  "largeIcon": "icon.png",
+  "defaultWindowType": "overlay",
+  "transparent": true,
+  "noSplashOnLaunch": true,
+  "spinnerOnLaunch": false,
+  "disableBackHistoryAPI": true,
+  "visible": false,
+  "class": {
+    "hidden": true
+  },
+  "bgColor": "#00000000",
+  "requiredACG": [],
+  "handlesRelaunch": true
+}
