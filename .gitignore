@@ -1,0 +1,10 @@
+dist/
+packages/
+__pycache__/
+*.pyc
+*.key
+*.pem
+*.log
+.keys/
+.env*
+node_modules/
