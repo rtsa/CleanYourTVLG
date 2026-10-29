@@ -1,0 +1,11 @@
+#!/bin/sh
+L=/media/developer/cleanyourtv
+[ -e "$L/satellite-menu-enabled" ] || exit 0
+[ -e "$L/DISABLE" ] && exit 0
+curl -s -f -m 1 http://127.0.0.1:18767/satellite/status >/dev/null && exit 0
+pgrep -f '^node /media/developer/cleanyourtv/satellite-menu-server.js$' >/dev/null || (nohup node "$L/satellite-menu-server.js" >/tmp/satellite-menu.log 2>&1 </dev/null &)
+for i in 1 2 3 4 5 6; do
+  curl -s -f -m 1 http://127.0.0.1:18767/satellite/status >/dev/null && break
+  sleep 1
+done
+# Start the loopback controller only. Opening the menu always requires the Home key.
